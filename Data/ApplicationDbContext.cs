@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using GoogleAuthAzure.Models;
 
 namespace GoogleAuthAzure.Data
 {
@@ -12,5 +13,6 @@ namespace GoogleAuthAzure.Data
             : base(options)
         {
         }
+        public DbSet<GoogleAuthAzure.Models.Widget> Widget { get; set; }
     }
 }

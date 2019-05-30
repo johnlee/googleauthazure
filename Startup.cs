@@ -43,7 +43,11 @@ namespace GoogleAuthAzure
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().AddRazorPagesOptions(options =>
+                {
+                    options.Conventions.AuthorizeFolder("/Widgets");
+                })
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
